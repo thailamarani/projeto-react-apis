@@ -19,7 +19,7 @@ const Header = ({ page, setPage }) => {
         leftButtonText = "Voltar para lista de Pokemons";
         nextPage = () => goToPokemonListPage(navigate);
     } else if (pathname.includes("/detalhes/")) {
-        titlePage = "Nome do Pokemon";
+        titlePage = pathname.split("/")[2];
         leftButtonText = "Voltar";
         nextPage = () => goToPokemonListPage(navigate);
     }
