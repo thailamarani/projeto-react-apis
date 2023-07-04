@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import PokemonCard from "../../Components/PokemonCard/PokemonCard";
 import { PokemonListContainer } from './styled';
 import { getAllPokemons } from "../../API/request";
+import { GlobalStateContext } from "../../Global/GlobalStateContext";
 
-const PokemonListPage = ({ pokedex, setPokedex, addPokemon }) => {
+const PokemonListPage = () => {
     const [ pokemons, setPokemons ] = useState([])
+    const { pokedex, setPokedex, addPokemon } = useContext(GlobalStateContext)
 
     useEffect(() => {
         getAllPokemons(setPokemons)
