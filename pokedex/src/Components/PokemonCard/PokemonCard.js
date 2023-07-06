@@ -9,21 +9,23 @@ const PokemonCard = ({ poke, addPokemon, removePokemon }) => {
     const navigate = useNavigate()
     const { pathname } = useLocation()
 
-    console.log(poke)
+    const changeFirstLetter = (name) => {
+        return name[0].toUpperCase() + name.substring(1)
+    }
 
     return (
         <PokeCardContainer type={returnBackgroundColorCard(poke.types[0].type.name)}>
             <InfoContainer>
-                <p>#{poke.id}</p>
-                <h1>{poke.name}</h1>
+                <p>#{poke.id.toString().length === 1 ? `0${poke.id}` : poke.id}</p>
+                <h1>{changeFirstLetter(poke.name)}</h1>
                 <div>
-                    {poke.types.map((type) => {
-                        return <TypeImg src={returnTypes(type.type.name)} />;
+                    {poke.types.map((type, index) => {
+                        return <TypeImg key={index} src={returnTypes(type.type.name)} />;
                     })}
                 </div>
             </InfoContainer>
             <ImgContainer>
-                <PokeballImg src={pokebola}/>
+                <PokeballImg src={pokebola} />
                 <PokeImg src={poke.sprites.other["official-artwork"].front_default} alt={`imagem do pokemon ${poke.name}`} />
             </ImgContainer>
             <ButtonsContainer>

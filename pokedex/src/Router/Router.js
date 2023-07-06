@@ -5,15 +5,15 @@ import PokemonDetailPage from '../Pages/PokemonDetailPage/PokemonDetailPage';
 import Header from '../Components/Header/Header';
 
 const Router = () => {
-    return(
+    return (
         <BrowserRouter>
-        <Header/>
+            <Header />
             <Routes>
-                <Route path="/" element={<PokemonListPage/>} />
+                <Route path="/" element={<PokemonListPage />} />
                 <Route path="/pokedex" element={<PokedexPage />} />
                 <Route path="/detalhes/:nome" element={<PokemonDetailPage />} />
             </Routes>
-        </BrowserRouter>    
+        </BrowserRouter>
     )
 };
 

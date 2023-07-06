@@ -63,6 +63,7 @@ export const ButtonCapture = styled.button`
     cursor: pointer;
     margin-right: 15px;
     z-index: 1;
+    color: black;
 `;
 
 export const ButtonDetail = styled.h3`

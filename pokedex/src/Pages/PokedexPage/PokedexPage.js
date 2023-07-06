@@ -10,12 +10,12 @@ const PokedexPage = () => {
         <PokedexContainer>
             {
                 pokedex.map((poke) => {
-                    return(
-                        <PokemonCard poke={poke} removePokemon={removePokemon} />    
+                    return (
+                        <PokemonCard poke={poke} removePokemon={removePokemon} />
                     )
                 })
             }
-        </PokedexContainer>   
+        </PokedexContainer>
     )
 };
 
